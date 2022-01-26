@@ -8,13 +8,13 @@ li {
 
 header {
     width: 100%;
-    height: 80px;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.5);
     color: black;
 }
 
 header div {
     float: left;
+    z-index: 2;
 }
 
 .logo {
@@ -78,13 +78,13 @@ header div {
     background-repeat: no-repeat;
 }
 
-.maincontainer>.section:nth-of-type(1) {
+.maincontainer>.section:nth-of-type(1) .bxslider {
     position: relative;
+    width: 90%;
 }
 
-.maincontainer>.section>.bxslider img {
-    width: 100%;
-    height: 100%;
+.maincontainer .section:nth-of-type(1)>.img {
+    object-fit: cover;
 }
 
 .maincontainer>.section:nth-of-type(2) {
@@ -119,6 +119,21 @@ header div {
     z-index: -1;
 }
 
+#tab1 span {
+    position: absolute;
+    right: 350px;
+}
+
+#tab2 h2 {
+    position: absolute;
+    right: 300px;
+}
+
+#tab3 h2 {
+    position: absolute;
+    right: 350px;
+}
+
 .explain {
     width: 700px;
     height: 600px;
@@ -142,11 +157,17 @@ header div {
     font-size: 20px;
 }
 
+#fullpage .section {
+    width: 100vw;
+    height: 100vh;
+}
+
 #fullpage .section:nth-of-type(3) {
     background-color: wheat;
     background-image: url(../imgaes/main_alist_pc.jpg);
     background-size: cover;
     position: relative;
+    z-index: -1;
 }
 
 
@@ -182,4 +203,135 @@ header div {
     position: absolute;
     left: 54px;
     top: 400px;
+}
+
+
+/* 탭 메뉴 */
+
+
+/*---------- vertical tab nav */
+
+.position {
+    position: absolute;
+    width: 550px;
+    top: 550px;
+    right: 150px;
+}
+
+
+/* .IMG {
+    position: absolute;
+    width: 500px;
+    border-radius: 30px;
+    top: 100px;
+    right: 200px;
+    z-index: -1;
+} */
+
+#vertical_tab_nav {
+    display: block;
+    width: 100%;
+}
+
+.tabs {
+    float: left;
+    margin: 52px;
+    padding: 29px;
+    list-style: none;
+    overflow: hidden;
+    width: 30%;
+    border-radius: 10px 0 0 10px;
+}
+
+.tabs li {
+    border-bottom: 1px solid #000;
+    margin-bottom: 1px;
+    text-align: left;
+    padding: 0px;
+}
+
+#vertical_tab_nav li:last-child {
+    margin-bottom: 0px;
+    border-bottom: 0px;
+}
+
+#vertical_tab_nav li a {
+    display: block;
+    font-size: 14pt;
+    color: #fff;
+    text-decoration: none;
+    padding: 7%;
+    background: #57cac9;
+    background: -webkit-linear-gradient(top, #444, #333);
+    background: -moz-linear-gradient(top, #444, #333);
+}
+
+#vertical_tab_nav li a.selected {
+    background: #fff;
+    color: #000;
+}
+
+.tab_container {
+    display: block;
+    background: #fff;
+    width: 80%;
+    min-height: 500px;
+}
+
+#vertical_tab_nav div article {
+    display: none;
+    margin: 0px;
+    color: #555;
+    padding: 10px 3% 3% 3%;
+}
+
+#vertical_tab_nav div article p {
+    margin: 0px 0px 20px 0px;
+}
+
+@media screen and (max-width: 781px) {
+    .tab_container {
+        display: block;
+        margin: 0 auto;
+        width: 95%;
+        border-top: none;
+        border-radius: 0;
+        box-shadow: 0px 0px 10px black;
+    }
+    .d_active {
+        background: #fff;
+    }
+}
+
+.tabs {
+    display: none;
+}
+
+style accordion links .tab_drawer_heading {
+    margin: 0;
+    font-size: 14pt;
+    color: #fff;
+    text-decoration: none;
+    padding: 3%;
+    background: #57cac9;
+    background: -webkit-linear-gradient(top, #444, #333);
+    background: -moz-linear-gradient(top, #444, #333);
+}
+
+@media screen and (min-width: 480px) {
+    .tab_container {
+        float: left;
+        padding: 10px 3% 3% 3%;
+        border-radius: 0 10px 10px 0;
+        width: 64%;
+    }
+    .tabs {
+        display: block;
+    }
+    .tab_drawer_heading {
+        display: none;
+    }
+    article {
+        padding: 0;
+    }
 }
